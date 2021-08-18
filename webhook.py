@@ -31,7 +31,7 @@ def status():
         logger.info('Status page loaded without password')
         return "<h1>Access denied!<h1>", 403
 
-    return f'<h1>This is telegram bot server, ' \
+    return f'<h1>Это тестовый бот", ' \
            f'<a href="https://github.com/otter18/telegram-bot-template">templated</a> by ' \
            f'<a href="https://github.com/otter18">@otter18</a></h1>' \
            f'<p>Server uptime: {datetime.timedelta(seconds=time.time() - boot_time)}</p>' \
