@@ -33,7 +33,7 @@ def say_welcome(message):
     logger.info(f'</code>@{message.from_user.username}<code> ({message.chat.id}) used /start or /help')
     bot.send_message(
         message.chat.id,
-        '<b>Hello! This is a telegram bot template written by <a href="https://github.com/otter18">otter18</a></b>',
+        '<b>Тест бота</a></b>',
         parse_mode='html'
     )
 
@@ -48,6 +48,11 @@ def echo(message):
 
     logger.info(f'</code>@{message.from_user.username}<code> ({message.chat.id}) used echo:\n\n%s', message.text)
     bot.send_message(message.chat.id, message.text)
+
+@bot.message_handler(commands=["id"])
+def get_id(message):
+    logger.info(f'</code>@{message.from_user.username}<code> used /id')
+    bot.send_message(message.chat.id, f"user_id = {message.chat.id}")
 
 
 if __name__ == '__main__':
