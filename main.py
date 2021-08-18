@@ -54,6 +54,17 @@ def get_id(message):
     logger.info(f'</code>@{message.from_user.username}<code> used /id')
     bot.send_message(message.chat.id, f"user_id = {message.chat.id}")
 
+@bot.message_handler(commands=["test"])
+def get_id(message):
+    test = 5
+    while test:
+        bot.send_message(
+            message.chat.id,
+            '<b>Привет, я упоротый бот</b>',
+            parse_mode='html'
+        )
+        test -= 1
+
 
 if __name__ == '__main__':
     if os.environ.get("IS_PRODUCTION", "False") == "True":
