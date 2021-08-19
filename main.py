@@ -66,7 +66,7 @@ def get_id(message):
         ping = rq.get(url)
         bot.send_message(
             message.chat.id,
-            f'{url}\n <b>Привет, я упоротый бот</b> - {test} \n {ping.headers}',
+            f'{url}\n <b>Привет, я упоротый бот</b> - {test} \n <b>Статус</b>{ping.status_code}',
             parse_mode='html'
         )
         test -= 1
