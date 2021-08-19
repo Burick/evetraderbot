@@ -39,7 +39,7 @@ def status():
 
 
 # ------------- webhook ----------------
-@app.route('/' + WEBHOOK_TOKEN, methods=['POST'])
+@app.route('/' + WEBHOOK_TOKEN, methods=['POST', 'GET'])
 def getMessage():
     # temp = request.stream.read().decode("utf-8")
     temp = request.get_data().decode("utf-8")
