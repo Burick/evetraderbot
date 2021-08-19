@@ -26,10 +26,10 @@ def handle_exception(e):
 # -------------- status webpage --------------
 @app.route('/')
 def status():
-    password = request.args.get("password")
-    if password != ADMIN_PASSWORD:
-        logger.info('Status page loaded without password')
-        return "<h1>Access denied!<h1>", 403
+    # password = request.args.get("password")
+    # if password != ADMIN_PASSWORD:
+    #     logger.info('Status page loaded without password')
+    #     return "<h1>Access denied!<h1>", 403
 
     return f'<h1>Это просто ОЧЕНЬ упоротый сломаный бот", ' \
            f'<a href="https://github.com/otter18/telegram-bot-template">templated</a> by ' \
@@ -39,7 +39,7 @@ def status():
 
 
 # ------------- webhook ----------------
-@app.route('/' + WEBHOOK_TOKEN, methods=['POST', 'GET'])
+@app.route('/' + WEBHOOK_TOKEN, methods=['POST'])
 def getMessage():
     # temp = request.stream.read().decode("utf-8")
     temp = request.get_data().decode("utf-8")
