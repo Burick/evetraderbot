@@ -57,7 +57,7 @@ def say_welcome(message):
 
 @bot.message_handler(commands=['test'])
 def get_id(message):
-    test = 5
+    test = 10
     while test:
         bot.send_message(
             message.chat.id,
