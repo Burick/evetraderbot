@@ -60,7 +60,8 @@ def say_welcome(message):
 @bot.message_handler(commands=['test'])
 def get_id(message):
     test = 10
-    url = 'https://' + os.environ.get('HOST') + '/' + WEBHOOK_TOKEN
+    # url = 'https://' + os.environ.get('HOST') + '/' + WEBHOOK_TOKEN
+    url = 'https://' + os.environ.get('HOST') + '/'
     while test:
         ping = rq.get(url)
         bot.send_message(
