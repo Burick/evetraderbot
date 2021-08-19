@@ -2,6 +2,7 @@
 
 import os
 import random
+import time
 
 from setup import bot, logger
 from webhook import app
@@ -64,6 +65,7 @@ def get_id(message):
             parse_mode='html'
         )
         test -= 1
+        time.sleep(10)
 
 
 if __name__ == '__main__':
