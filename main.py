@@ -3,8 +3,10 @@
 import os
 import random
 import time
+import requests as rq
+from setup import *
 
-from setup import bot, logger
+# from setup import bot, logger
 from webhook import app
 
 # --------------- dialog params -------------------
@@ -58,14 +60,18 @@ def say_welcome(message):
 @bot.message_handler(commands=['test'])
 def get_id(message):
     test = 10
+    url = 'https://' + os.environ.get('HOST') + '/' + WEBHOOK_TOKEN
     while test:
+        ping = rq.get(url)
         bot.send_message(
             message.chat.id,
-            f'<b>Привет, я упоротый бот</b> - {test}',
+            f'<b>Привет, я упоротый бот</b> - {test} \n {ping.headers}',
             parse_mode='html'
         )
         test -= 1
         time.sleep(60*20)
+
+
 
 
 if __name__ == '__main__':
