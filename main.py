@@ -61,7 +61,7 @@ def get_id(message):
     while test:
         bot.send_message(
             message.chat.id,
-            '<b>Привет, я упоротый бот</b>',
+            f'<b>Привет, я упоротый бот</b> - {test}',
             parse_mode='html'
         )
         test -= 1
