@@ -65,7 +65,7 @@ def get_id(message):
             parse_mode='html'
         )
         test -= 1
-        time.sleep(10)
+        time.sleep(60*20)
 
 
 if __name__ == '__main__':
