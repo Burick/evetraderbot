@@ -74,7 +74,7 @@ def get_id(message):
             parse_mode='html'
         )
         test -= 1
-        time.sleep(60)
+        time.sleep(600)
 
 
 
@@ -86,11 +86,12 @@ def get_id(message):
     ping = rq.get(url)
     while test:
         message = market.test()
-        bot.send_message(
-            message.chat.id,
-            f'<b>Привет, я упоротый маркетбот</b> - {test} \n <b>Статус - </b>{ping.status_code} \n message',
-            parse_mode='html'
-        )
+        if message:
+            bot.send_message(
+                message.chat.id,
+                f'<b>Привет, я упоротый маркетбот</b> - {test} \n <b>Статус - </b>{ping.status_code} \n {message}',
+                parse_mode='html'
+            )
         test -= 1
         time.sleep(60)
 
