@@ -79,7 +79,7 @@ def get_id(message):
 
 
 @bot.message_handler(commands=['market'])
-def get_id(message):
+def get_market(message):
     test = 10
     # url = 'https://' + os.environ.get('HOST') + '/' + WEBHOOK_TOKEN
     url = 'https://' + os.environ.get('HOST') + '/'
