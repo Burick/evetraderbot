@@ -88,7 +88,7 @@ def get_id(message):
         message = market.test()
         bot.send_message(
             message.chat.id,
-            f'<b>Привет, я упоротый бот</b> - {test} \n <b>Статус - </b>{ping.status_code} \n message',
+            f'<b>Привет, я упоротый маркетбот</b> - {test} \n <b>Статус - </b>{ping.status_code} \n message',
             parse_mode='html'
         )
         test -= 1
