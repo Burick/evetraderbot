@@ -64,10 +64,10 @@ def get_id(message):
     url = 'https://' + os.environ.get('HOST') + '/'
     while test:
         # ping = rq.get(url)
-        ping = rq.status_code
+        ping = rq.get(url)
         bot.send_message(
             message.chat.id,
-            f'{url}\n <b>Привет, я упоротый бот</b> - {test} \n <b>Статус - </b>{ping}',
+            f'{url}\n <b>Привет, я упоротый бот</b> - {test} \n <b>Статус - </b>{ping.status_code}',
             parse_mode='html'
         )
         test -= 1
