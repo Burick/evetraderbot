@@ -1,8 +1,9 @@
 gunicorn
-Flask
-werkzeug
+Flask~=2.0.1
+werkzeug~=2.0.1
 sslcrypto
 pyTelegramBotAPI
-datetime
+datetime~=4.3
 tg-logger
-pytz
+pytz~=2021.1
+requests~=2.26.0

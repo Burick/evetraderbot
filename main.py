@@ -9,6 +9,9 @@ from setup import *
 # from setup import bot, logger
 from webhook import app
 
+from market import Market
+market = Market()
+
 # --------------- dialog params -------------------
 dialog = {
     'hello': {
@@ -71,7 +74,26 @@ def get_id(message):
             parse_mode='html'
         )
         test -= 1
-        time.sleep(60*20)
+        time.sleep(60)
+
+
+
+@bot.message_handler(commands=['market'])
+def get_id(message):
+    test = 10
+    # url = 'https://' + os.environ.get('HOST') + '/' + WEBHOOK_TOKEN
+    url = 'https://' + os.environ.get('HOST') + '/'
+    ping = rq.get(url)
+    while test:
+        message = market.test()
+        bot.send_message(
+            message.chat.id,
+            f'<b>Привет, я упоротый бот</b> - {test} \n <b>Статус - </b>{ping.status_code} \n message',
+            parse_mode='html'
+        )
+        test -= 1
+        time.sleep(60)
+
 
 
 
