@@ -55,7 +55,7 @@ class Market:
             if self.prices.get(name) != orders:
                 self.prices[name] = orders
                 print('Изменение', name, ' - ', region)
-                message.append(f'Изменение {name} - {region}')
+                message.append(f'Изменение {name} - {region}\n')
         message = ''.join(message)
         if message:
             return message
