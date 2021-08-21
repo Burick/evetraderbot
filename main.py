@@ -85,11 +85,11 @@ def get_market(message):
     url = 'https://' + os.environ.get('HOST') + '/'
     while test:
         ping = rq.get(url)
-        message = market.test()
+        msg = market.test()
         if message:
             bot.send_message(
                 message.chat.id,
-                f'<b>Привет, я упоротый маркетбот</b> - {test} \n <b>Статус - </b>{ping.status_code} \n {message}',
+                f'<b>Привет, я упоротый маркетбот</b> - {test} \n <b>Статус - </b>{ping.status_code} \n {msg}',
                 parse_mode='html'
             )
         test -= 1
