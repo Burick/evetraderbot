@@ -46,16 +46,17 @@ class Market:
     def test(self):
         message = []
         for name, region in self.pers.items():
-            for type_name, type_id in self.types.items():
-                # type_id = 11399
-                region_id =  self.regions[region]
-                url =  f' https://esi.evetech.net/latest/markets/{region_id}/orders/?&order_type=buy&type_id={type_id}'
-                resp = req.get(url)
-                orders = resp.content
-                if self.prices.get(name) != orders:
-                    self.prices[name] = orders
-                    # print('Изменение', name, ' - ', region)
-                    message.append(f'Изменение {name} - {region} - {type_name}\n')
+        # for type_name, type_id in self.types.items():
+            type_name = "Morphite"
+            type_id = 11399
+            region_id =  self.regions[region]
+            url =  f' https://esi.evetech.net/latest/markets/{region_id}/orders/?&order_type=buy&type_id={type_id}'
+            resp = req.get(url)
+            orders = resp.content
+            if self.prices.get(name) != orders:
+                self.prices[name] = orders
+                # print('Изменение', name, ' - ', region)
+                message.append(f'Изменение {name} - {region} - {type_name}\n')
 
         message = ''.join(message)
         if message:
