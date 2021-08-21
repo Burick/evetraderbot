@@ -86,7 +86,7 @@ def get_market(message):
     while test:
         ping = rq.get(url)
         msg = market.test()
-        if message:
+        if message != False:
             bot.send_message(
                 message.chat.id,
                 f'<b>Привет, я упоротый маркетбот</b> - {test} \n <b>Статус - </b>{ping.status_code} \n {msg}',
