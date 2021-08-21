@@ -83,8 +83,8 @@ def get_market(message):
     test = 10
     # url = 'https://' + os.environ.get('HOST') + '/' + WEBHOOK_TOKEN
     url = 'https://' + os.environ.get('HOST') + '/'
-    ping = rq.get(url)
     while test:
+        ping = rq.get(url)
         message = market.test()
         if message:
             bot.send_message(
