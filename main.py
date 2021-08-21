@@ -86,10 +86,18 @@ def get_market(message):
     while True:
         ping = rq.get(url)
         msg = market.test()
+        msg_burick = market.getBuricklOrders()
         if msg:
             bot.send_message(
                 message.chat.id,
                 f'<b>Привет, я упоротый маркетбот</b> - {test} \n <b>Статус - </b>{ping.status_code} \n {msg}',
+                parse_mode='html'
+            )
+
+        if msg_burick:
+            bot.send_message(
+                message.chat.id,
+                f'<b>Burick</b> - \n{msg_burick}\n',
                 parse_mode='html'
             )
         test += 1

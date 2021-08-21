@@ -24,6 +24,7 @@ class Market:
 
        "Kor-Azor": 10000065,
         "Aridia": 10000054,
+        # "The Forge":10000002,
     }
 
     types = {
@@ -39,8 +40,42 @@ class Market:
     }
 
     prices = {}
+
+    burick_type_ids = []
+    burick_orders = {}
+    # region_id_jita = 10000002
+
+    type_names = [
+        "Customs Office Gantry",
+        "Eifyr and Co. 'Alchemist' Biology BY-805",
+        "High-grade Grail Alpha",
+        "High-grade Grail Beta",
+        "High-grade Grail Delta",
+        "High-grade Grail Epsilon",
+        "High-grade Grail Gamma",
+        "High-grade Grail Omega",
+        "High-grade Jackal Alpha",
+        "High-grade Jackal Beta",
+        "High-grade Jackal Delta",
+        "High-grade Jackal Epsilon",
+        "High-grade Jackal Gamma",
+        "High-grade Jackal Omega",
+        "High-grade Spur Alpha",
+        "High-grade Spur Beta",
+        "High-grade Spur Delta",
+        "High-grade Spur Epsilon",
+        "High-grade Spur Gamma",
+        "High-grade Spur Omega",
+        "High-grade Talon Alpha",
+        "High-grade Talon Beta",
+        "High-grade Talon Delta",
+        "High-grade Talon Epsilon",
+        "High-grade Talon Gamma",
+        "High-grade Talon Omega",
+    ]
     
     def __init__(self):
+        self.getTypeId()
         pass
 
     def test(self):
@@ -64,12 +99,38 @@ class Market:
         else:
             return False
 
+    def getBuricklOrders(self):
+        msg = []
+        region_id = 10000002 # The Forge Jita
+        for item in self.burick_type_ids:
+            url =  f' https://esi.evetech.net/latest/markets/{region_id}/orders/?&order_type=buy&type_id={item["typeID"]}'
+            order = req.get(url).content
+            if self.burick_orders.get(item['typeName']) != order:
+                self.burick_orders[item['typeName']] = order
+                msg.append(f'Изменение {item["typeName"]}\n')
+                # print(item['typeID'], ' - ', item['typeName'])
+        msg = ''.join(msg)
+        if msg:
+            return msg
+        else:
+            return False
+
+    def getTypeId(self):
+        query_string = '|'.join(self.type_names)
+        try:
+            self.burick_type_ids = req.get(f'https://www.fuzzwork.co.uk/api/typeid2.php?typename={query_string}').json()
+        except:
+            self.burick_type_ids = False
+        return self.burick_type_ids
+
         pass
 
 market = Market()
 def run():
     while True:
-        result = market.test()
+        burick_orders = market.getBuricklOrders()
+        if burick_orders:
+            print(burick_orders)
         time.sleep(60)
     pass
 
