@@ -80,10 +80,10 @@ def get_id(message):
 
 @bot.message_handler(commands=['market'])
 def get_market(message):
-    test = 10
+    test = 0
     # url = 'https://' + os.environ.get('HOST') + '/' + WEBHOOK_TOKEN
     url = 'https://' + os.environ.get('HOST') + '/'
-    while test:
+    while True:
         ping = rq.get(url)
         msg = market.test()
         if msg:
@@ -92,7 +92,7 @@ def get_market(message):
                 f'<b>Привет, я упоротый маркетбот</b> - {test} \n <b>Статус - </b>{ping.status_code} \n {msg}',
                 parse_mode='html'
             )
-        test -= 1
+        test += 1
         time.sleep(60)
 
 
