@@ -85,14 +85,14 @@ def get_market(message):
     url = 'https://' + os.environ.get('HOST') + '/'
     while True:
         ping = rq.get(url)
-        msg = market.test()
+        #msg = market.test()
         msg_burick = market.getBuricklOrders()
-        if msg:
-            bot.send_message(
-                message.chat.id,
-                f'<b>Привет, я упоротый маркетбот</b> - {test} \n <b>Статус - </b>{ping.status_code} \n {msg}',
-                parse_mode='html'
-            )
+        # if msg:
+        #     bot.send_message(
+        #         message.chat.id,
+        #         f'<b>Привет, я упоротый маркетбот</b> - {test} \n <b>Статус - </b>{ping.status_code} \n {msg}',
+        #         parse_mode='html'
+        #     )
 
         if msg_burick:
             bot.send_message(
