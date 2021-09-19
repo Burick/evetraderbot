@@ -47,10 +47,10 @@ class Market:
 
     type_names = [
         #"Customs Office Gantry",
-        "Eifyr and Co. 'Alchemist' Biology BY-805",
-        "Inherent Implants 'Noble' Repair Systems RS-601",
-        "Zainou 'Gnome' Weapon Upgrades WU-1001",
-        "Zainou 'Gypsy' Signature Analysis SA-701",
+        "Eifyr and Co. \'Alchemist\' Biology BY-805",
+        "Inherent Implants \'Noble\' Repair Systems RS-601",
+        "Zainou \'Gnome\' Weapon Upgrades WU-1001",
+        "Zainou \'Gypsy\' Signature Analysis SA-701",
         "Republic Fleet Torpedo Launcher",
 
         "High-grade Grail Alpha",
