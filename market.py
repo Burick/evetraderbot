@@ -46,7 +46,7 @@ class Market:
     # region_id_jita = 10000002
 
     type_names = [
-        "Customs Office Gantry",
+        #"Customs Office Gantry",
         "Eifyr and Co. 'Alchemist' Biology BY-805",
         "Inherent Implants 'Noble' Repair Systems RS-601",
         "Zainou 'Gnome' Weapon Upgrades WU-1001",
