@@ -1,7 +1,8 @@
 # -*- coding: utf-8 -*-
 import requests as req
 import time
-
+import urllib.parse
+#urllib.parse.quote_plus(query)
 class Market:
     pers = {
         "Karabasovich": "Derelik",
@@ -108,7 +109,9 @@ class Market:
         msg = []
         region_id = 10000002 # The Forge Jita
         for item in self.burick_type_ids:
-            url =  f' https://esi.evetech.net/latest/markets/{region_id}/orders/?&order_type=buy&type_id={item["typeID"]}'
+            url =  f' https://esi.evetech.net/latest/markets/{region_id}/orders/?&order_type=buy' \
+                   f'&type_id={item["typeID"]}'
+
             order = req.get(url).content
             if self.burick_orders.get(item['typeName']) != order:
                 self.burick_orders[item['typeName']] = order
@@ -121,7 +124,7 @@ class Market:
             return False
 
     def getTypeId(self):
-        query_string = '|'.join(self.type_names)
+        query_string = urllib.parse.quote_plus('|'.join(self.type_names))
         try:
             self.burick_type_ids = req.get(f'https://www.fuzzwork.co.uk/api/typeid2.php?typename={query_string}').json()
         except:
