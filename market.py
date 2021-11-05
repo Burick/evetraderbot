@@ -63,7 +63,7 @@ class Market:
         # "High-grade Jackal Alpha",
         # "High-grade Jackal Beta",
         # "High-grade Jackal Delta",
-        # "High-grade Jackal Epsilon",
+        "High-grade Jackal Epsilon",
         "High-grade Jackal Gamma",
         "High-grade Jackal Omega",
         "High-grade Spur Alpha",
