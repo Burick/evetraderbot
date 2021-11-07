@@ -55,7 +55,7 @@ class Market:
         "Republic Fleet Torpedo Launcher",
 
         # "High-grade Grail Alpha",
-        # "High-grade Grail Beta",
+        "High-grade Grail Beta",
         # "High-grade Grail Delta",
         # "High-grade Grail Epsilon",
         # "High-grade Grail Gamma",
