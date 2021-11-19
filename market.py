@@ -76,7 +76,7 @@ class Market:
         # "High-grade Talon Beta",
         # "High-grade Talon Delta",
         # "High-grade Talon Epsilon",
-        # "High-grade Talon Gamma",
+        "High-grade Talon Gamma",
         # "High-grade Talon Omega",
     ]
     
