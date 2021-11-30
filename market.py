@@ -52,6 +52,7 @@ class Market:
         # "Inherent Implants \'Noble\' Repair Systems RS-601",
         # "Zainou \'Gnome\' Weapon Upgrades WU-1001",
         # "Zainou \'Gypsy\' Signature Analysis SA-701",
+        "Zainou \'Gnome\' Weapon Upgrades WU-1001",
         "Republic Fleet Torpedo Launcher",
 
         # "High-grade Grail Alpha",
