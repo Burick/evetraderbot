@@ -54,6 +54,7 @@ class Market:
         "Zainou \'Gnome\' Weapon Upgrades WU-1001",
         "Republic Fleet Torpedo Launcher",
         "Republic Fleet 720mm Howitzer Artillery",
+        "Republic Fleet 425mm Autocannon",
 
         # "High-grade Grail Alpha",
         "High-grade Grail Beta",
