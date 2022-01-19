@@ -56,7 +56,7 @@ class Market:
         "Republic Fleet 720mm Howitzer Artillery",
         "Republic Fleet 425mm Autocannon",
 
-        # "High-grade Grail Alpha",
+        "High-grade Grail Alpha",
         #"High-grade Grail Beta",
         "High-grade Grail Delta",
         # "High-grade Grail Epsilon",
