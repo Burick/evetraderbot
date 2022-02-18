@@ -53,7 +53,7 @@ class Market:
         "Zainou \'Gypsy\' Signature Analysis SA-701",
         # "Zainou \'Gnome\' Weapon Upgrades WU-1001",
         "Republic Fleet Torpedo Launcher",
-        "Republic Fleet 720mm Howitzer Artillery",
+        # "Republic Fleet 720mm Howitzer Artillery",
         "Republic Fleet 425mm Autocannon",
 
         "High-grade Grail Alpha",
