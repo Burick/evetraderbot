@@ -79,7 +79,7 @@ class Market:
         # "High-grade Talon Delta",
         "High-grade Talon Epsilon",
         "High-grade Talon Gamma",
-        # "High-grade Talon Omega",
+        "High-grade Talon Omega",
     ]
     
     def __init__(self):
