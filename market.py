@@ -59,7 +59,7 @@ class Market:
         "High-grade Grail Alpha",
         #"High-grade Grail Beta",
         "High-grade Grail Delta",
-        # "High-grade Grail Epsilon",
+        "High-grade Grail Epsilon",
         "High-grade Grail Gamma",
         # "High-grade Grail Omega",
         # "High-grade Jackal Alpha",
